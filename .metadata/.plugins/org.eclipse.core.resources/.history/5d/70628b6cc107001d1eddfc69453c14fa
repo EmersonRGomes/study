@@ -1,0 +1,39 @@
+package br.com.gerenciadorstudy.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/novaEmpresa")
+public class NovaEmpresaServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Cadastrando empresa");
+		
+		PrintWriter out = response.getWriter();
+		
+		String nomeEmpresa = request.getParameter("nome");
+		
+		//Objeto empresa para adiconar informação no banco de dados
+		Empresa empresa =new Empresa();
+		empresa.setNome(nomeEmpresa);
+		
+		//Simulando a conexão com o banco de dados
+		Banco banco = new Banco();
+		banco.adiconar(empresa);
+		
+		//Chamando o JSP
+		request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		
+	}
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\Users\Emerson\Documents\Emerson\New space\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1221669915.index
+\gerenciadorstudy\src\main\java
+C:\Users\Emerson\Documents\Emerson\New space\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3962915219.index
+\gerenciadorstudy\src\main\java

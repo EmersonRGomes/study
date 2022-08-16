@@ -1,0 +1,34 @@
+package br.com.gerenciadorstudy.service;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.gerenciadorstudy.modelo.Banco;
+import br.com.gerenciadorstudy.modelo.Empresa;
+
+public class AdicionarEmpresa {
+
+	public void run(HttpServletRequest request, HttpServletResponse response) {
+		
+		String parmNomeEmpresa = request.getParameter("nome");
+		
+		//Objeto empresa para adiconar informação no banco de dados
+		Empresa empresa = new Empresa();
+		empresa.setNome(parmNomeEmpresa);
+		
+		//Simulando a conexão com o banco de dados
+		Banco banco = new Banco();
+		banco.adiconar(empresa);
+		
+	
+		//Chamando o JSP
+		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		request.setAttribute("empresaName", empresa.getNome());
+		rd.forward(request, response);
+		
+		
+	}
+	
+
+}

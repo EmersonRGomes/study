@@ -1,0 +1,49 @@
+package br.com.gerenciadorstudy.servlet;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.gerenciadorstudy.service.ListaEmpresa;
+
+/**
+ * Servlet implementation class ControllerServlet
+ */
+@WebServlet("/controller")
+public class ControllerServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String parmAcao = request.getParameter("acao");
+		
+		//Chamada do serviço para listagem de empresa
+		if ( parmAcao.equals("listaEmpresa") ) {
+			System.out.println("listaEmpresa Controller");
+			ListaEmpresa listaEmpresa = new ListaEmpresa();
+			listaEmpresa.run(request,response);
+			
+		}
+		
+		//Chamada do serviço para adiconar empresa
+		if ( parmAcao.equals("adiconaEmpresa") ) {
+			System.out.println("adiconaEmpresa Controller");
+		}
+		
+		//Chamada do serviço para atualizar empresa
+		if ( parmAcao.equals("atualizaEmpresa") ) {
+			System.out.println("atualizaEmpresa Controller");
+		}
+		
+		//Chamada do serviço para remover empresa
+		if ( parmAcao.equals("removeEmpresa") ) {
+			System.out.println("removeEmpresa Controller");
+		}
+
+	}
+
+	
+}

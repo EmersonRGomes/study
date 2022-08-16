@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+C:\Users\Emerson\Documents\Emerson\New space\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3432080207.index
+1720719314.index
+3962915219.index
+1221669915.index
+1221669915.index
+2590727931.index
+1207268911.index
+3955089289.index
+3841266610.index
