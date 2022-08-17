@@ -9,7 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.gerenciadorstudy.service.AdicionarEmpresa;
+import br.com.gerenciadorstudy.service.AtualizaEmpresa;
 import br.com.gerenciadorstudy.service.ListaEmpresa;
+import br.com.gerenciadorstudy.service.MostraEmpresa;
+import br.com.gerenciadorstudy.service.RemoveEmpresa;
 
 /**
  * Servlet implementation class ControllerServlet
@@ -42,13 +45,22 @@ public class ControllerServlet extends HttpServlet {
 		}
 		
 		//Chamada do serviço para atualizar empresa
+		if ( parmAcao.equals("mostraEmpresa") ) {
+			System.out.println("mostraEmpresa Controller");
+			MostraEmpresa acao = new MostraEmpresa();
+			acao.run(request,response);
+		}
 		if ( parmAcao.equals("atualizaEmpresa") ) {
 			System.out.println("atualizaEmpresa Controller");
+			AtualizaEmpresa acao = new AtualizaEmpresa(); 
+			acao.run(request,response);
 		}
 		
 		//Chamada do serviço para remover empresa
 		if ( parmAcao.equals("removeEmpresa") ) {
 			System.out.println("removeEmpresa Controller");
+			RemoveEmpresa acao = new RemoveEmpresa(); 
+			acao.run(request,response);
 		}
 
 	}

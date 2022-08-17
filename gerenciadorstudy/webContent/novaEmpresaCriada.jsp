@@ -19,6 +19,6 @@
 			Nenhuma empresa cadastrada!
 		</c:if>
 		
-		<a href="/gerenciadorstudy/listaEmpresas"> Lista de empresas </a>  
+		<a href="/gerenciadorstudy/controller?acao=listaEmpresa"> Lista de empresas </a>  
 	</body>
 </html>

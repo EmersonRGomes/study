@@ -13,8 +13,8 @@
     <ul>
         <c:forEach items="${empresas}" var="empresa">
             <li>${empresa.nome} | <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>
-            <a href="/gerenciadorstudy/mostraEmpresa?id=${empresa.id}"> atulizar </a> | 
-            	<a href="/gerenciadorstudy/removeEmpresa?id=${empresa.id}"> remove </a>  
+            <a href="/gerenciadorstudy/controller?acao=mostraEmpresa&id=${empresa.id}"> atulizar </a> | 
+            	<a href="/gerenciadorstudy/controller?acao=removeEmpresa&id=${empresa.id}"> remove </a>  
             </li>
         </c:forEach>
     </ul>

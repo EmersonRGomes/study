@@ -8,10 +8,10 @@
 </head>
 <body>
 
-	  <form action ="<c:url value="/alteraEmpresa"/>" method="post">	
+	  <form action ="<c:url value="/controller?acao=atualizaEmpresa"/>" method="post">	
 	  
 	  
-		Atualizar a empresa: ${empresa.nome} </br>	
+		Atualizar a empresa: ${empresa.nome} <br>
 		Entre com o novo nome: <input type="text" name="nome">
 		| ID: ${empresa.id}<input type="hidden" name="id" value="${empresa.id}">
 			  <input type="submit">

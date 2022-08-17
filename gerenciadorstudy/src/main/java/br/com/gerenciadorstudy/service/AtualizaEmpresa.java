@@ -1,0 +1,35 @@
+package br.com.gerenciadorstudy.service;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.gerenciadorstudy.modelo.Banco;
+import br.com.gerenciadorstudy.modelo.Empresa;
+
+public class AtualizaEmpresa {
+
+	public void run(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		 	
+			String parmEmpresa = request.getParameter("nome");
+			String parmId =request.getParameter("id");
+		    Integer id = Integer.valueOf(parmId);
+	   
+		    //Validação se o id é valido
+		    
+		    Banco banco = new Banco();
+		    Empresa emp = banco.buscaEmpresaID(id);
+		    
+		    if (emp !=null) {
+		    	banco.atualizar(parmEmpresa, emp);
+		    }else {
+		    	System.out.println("O ID nãofoi localizado");
+		    }
+		    System.out.println("Empresa alterada com sucesso");	
+		    
+		    response.sendRedirect("/gerenciadorstudy/controller?acao=listaEmpresa");
+		
+	}
+
+}
